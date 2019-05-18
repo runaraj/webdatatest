@@ -19,6 +19,11 @@ apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 apply plugin: 'com.palantir.docker'
 
+bootJar {
+    baseName = 'gs-rest-service'
+    version =  '0.1.0'
+}
+
 task unpack(type: Copy) {
     dependsOn bootJar
     from(zipTree(tasks.bootJar.outputs.files.singleFile))
@@ -31,10 +36,7 @@ docker {
     buildArgs(['DEPENDENCY': "dependency"])
 }
 
-bootJar {
-    baseName = 'gs-rest-service'
-    version =  '0.1.0'
-}
+
 
 repositories {
     mavenCentral()
