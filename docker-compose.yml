@@ -5,12 +5,12 @@ services:
     ports:
      - "8080:8080"
     links:
-      - "db:redis"
+      - "redis"
     networks:
       - spring
-  db:
+  redis:
     image: "redis:alpine"
-    hostname: redis
+    #hostname: redis
     command: [ "redis-server", "--protected-mode", "no" ]
     ports:
      - "6379:6379"
