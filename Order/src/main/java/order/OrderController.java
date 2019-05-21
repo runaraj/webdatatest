@@ -54,7 +54,7 @@ public class OrderController {
     // GET - retrieve info about orderId: pay status, items, userId
     public String orderFind(@PathVariable String orderId) {
         // retrieve order
-        Order o = new Order("test", Long.parseLong(orderId));
+        //Order o = new Order("test", Long.parseLong(orderId));
         return jedis.get(String.valueOf(orderId));
         // return order details
         //return new Order("def", counter.incrementAndGet());
