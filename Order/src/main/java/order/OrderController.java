@@ -50,7 +50,7 @@ public class OrderController {
     }
 
 
-    @RequestMapping("/find/orderId")
+    @RequestMapping("/find/{orderId}")
     // GET - retrieve info about orderId: pay status, items, userId
     public String orderFind(@PathVariable String orderId) {
         // retrieve order
