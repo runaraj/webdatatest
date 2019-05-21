@@ -6,8 +6,16 @@ services:
      - "8080:8080"
     links:
       - "db:redis"
+    networks:
+      - spring
   db:
     image: "redis:alpine"
     hostname: redis
     ports:
      - "6379:6379"
+    networks:
+      - spring
+
+networks:
+  spring:
+    external: true
