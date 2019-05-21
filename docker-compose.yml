@@ -9,9 +9,10 @@ services:
     networks:
       - spring
   db:
-    image: "redis:alpine"
+    build: ./Redis
+    #image: "redis:alpine"
     hostname: redis
-    command: [ "redis-server", "--protected-mode", "no" ]
+    #command: [ "redis-server", "--protected-mode", "no" ]
     ports:
      - "6379:6379"
     networks:
