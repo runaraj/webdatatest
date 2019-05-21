@@ -1,0 +1,12 @@
+services:
+  app:
+    build: ./Order
+    ports:
+     - "8080:8080"
+    links:
+      - "db:redis"
+  db:
+    image: "redis:alpine"
+    hostname: redis
+    ports:
+     - "6379:6379"

@@ -13,4 +13,6 @@ VOLUME /tmp
 ARG JAR_FILE
 COPY ${JAR_FILE} app.jar
 EXPOSE 8080:8080
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar/build/libs/gs-rest-service-0.1.0.jar"]
+# ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar/build/libs/gs-rest-service-0.1.0.jar"]
+
+ENTRYPOINT ["java", "-jar", "build/libs/gs-rest-service-0.1.0.jar"]

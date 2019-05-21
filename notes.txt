@@ -1,4 +1,0 @@
-connect to aws from cmd:
-
-ssh -i <path to key>/key.pem ec2-user@<public DNS(IPv4)>
-
