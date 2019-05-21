@@ -1,8 +1,7 @@
 version: '2'
 services:
   app:
-    build: .
-    dockerfile: ./Order/Dockerfile
+    build: ./Order
     ports:
      - "8080:8080"
     links:
