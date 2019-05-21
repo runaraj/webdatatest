@@ -18,7 +18,7 @@ public class OrderController {
     private static final String template = "Hello, %s!";
     private final AtomicLong counter = new AtomicLong();
     
-    // private Jedis jedis = new Jedis("localhost");
+    private Jedis jedis = new Jedis("localhost");
 
     // @RequestMapping(method=GET) or POST etc. to narrow mapping. without method=.. it maps all HTTP ops.
     // Pathvariable => straight up
@@ -28,7 +28,7 @@ public class OrderController {
         // create new order
         Order o = new Order(userId, counter.incrementAndGet());
         // save order
-        // jedis.set(String.valueOf(o.getorderId()), String.valueOf(o.getUserId()));
+        jedis.set(String.valueOf(o.getorderId()), String.valueOf(o.getUserId()));
         // return new orderId
         return o.getorderId();
     }
