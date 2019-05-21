@@ -18,7 +18,7 @@ public class OrderController {
     private static final String template = "Hello, %s!";
     private final AtomicLong counter = new AtomicLong();
     
-    private Jedis jedis = new Jedis("localhost");
+    private Jedis jedis = new Jedis();
 
     // @RequestMapping(method=GET) or POST etc. to narrow mapping. without method=.. it maps all HTTP ops.
     // Pathvariable => straight up
