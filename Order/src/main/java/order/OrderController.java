@@ -85,4 +85,12 @@ public class OrderController {
         return new Order("def", counter.incrementAndGet());
     }
 
+    //
+    @RequestMapping("/")
+    public String orderEnd() {
+        // get order - orderId
+        // checkout order
+        return "This is the order endpoint";
+    }
+
 }
