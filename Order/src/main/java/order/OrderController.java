@@ -86,7 +86,7 @@ public class OrderController {
     }
 
     //
-    @RequestMapping("/")
+    @RequestMapping("")
     public String orderEnd() {
         // get order - orderId
         // checkout order
