@@ -92,7 +92,7 @@ public class OrderController {
     @RequestMapping("")
     public String orderEnd() {
         // get order - orderId
-        File f = new File("./Test.txt");
+        File f = new File("./app/src/main/java/order/Test.txt");
         if(f.exists() && !f.isDirectory()) { 
             return "hello";
         }
