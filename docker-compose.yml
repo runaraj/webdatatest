@@ -27,8 +27,8 @@ services:
       - "app"
     ports:
       - "80:80"
-    #links:
-     # - "app"
+    links:
+      - "app"
 
 networks:
   spring:
