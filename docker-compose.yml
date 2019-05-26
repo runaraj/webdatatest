@@ -12,7 +12,6 @@ services:
       - spring
   redis:
     image: "redis:alpine"
-    #hostname: redis
     command: [ "redis-server", "--protected-mode", "no" ]
     ports:
      - "6379:6379"
@@ -24,11 +23,11 @@ services:
     volumes:
        - ./nginx.conf:/etc/nginx/nginx.conf:ro
     depends_on:
-      - "app"
+      - app
     ports:
       - "80:80"
-    links:
-      - "app"
+    networks:
+      - spring
 
 networks:
   spring:
