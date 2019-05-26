@@ -2,8 +2,6 @@ version: '3'
 services:
   app:
     build: ./Order
-    #ports:
-    # - "80:80"
     links:
       - "redis"
     expose:
