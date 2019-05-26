@@ -4,7 +4,7 @@ services:
     build: ./Order
     links:
       - "redis"
-    expose:
+    ports:
       - "80"
     networks:
       - spring
