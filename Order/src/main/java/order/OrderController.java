@@ -89,8 +89,14 @@ public class OrderController {
     @RequestMapping("")
     public String orderEnd() {
         // get order - orderId
+        try {
+            Test t = new Test();
+            return "Hello hello";
+        } catch (Exception e) {
+            return "This is the order endpoint";
+        }
         // checkout order
-        return "This is the order endpoint";
+        
     }
 
 }
