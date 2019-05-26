@@ -91,7 +91,7 @@ public class OrderController {
         // get order - orderId
         try {
             Test t = new Test();
-            return "Hello hello";
+            return t.getName();
         } catch (Exception e) {
             return "This is the order endpoint";
         }
