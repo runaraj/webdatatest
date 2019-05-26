@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import redis.clients.jedis.Jedis;
 
+
+import java.io.File;
+
 @RestController
 // Catch everything starting with /orders
 @RequestMapping("/orders")
@@ -89,14 +92,12 @@ public class OrderController {
     @RequestMapping("")
     public String orderEnd() {
         // get order - orderId
-        try {
-            Test t = new Test();
-            return t.getName();
-        } catch (Exception e) {
-            return "This is the order endpoint";
+        File f = new File("./Test.txt");
+        if(f.exists() && !f.isDirectory()) { 
+            return "hello";
         }
         // checkout order
-        
+        return "This is the order endpoint";
     }
 
 }
